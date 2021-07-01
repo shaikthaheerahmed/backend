@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Withdrawl account</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container text-center">
+<div>
+    <h3> using Withdrawl amount</h3>
+</div>
+<form th:action="@{withdrawl}" method="post"
+style="max-width: 600px;margin:0 auto"
+ th:object="${withdrawl}">
+
+
+  <div class="m-3">
+     <div class="form-group row">
+         <label class="col-form-label col-4">Username</label>
+     <div class="col-8">
+          <input type="text" class="form-control" id="username" th:field="*{username}" required>
+      </div>
+   </div>
+   
+    <div class="form-group row">
+         <label class="col-form-label col-4">Password</label>
+     <div class="col-8">
+          <input type="text" class="form-control" id="password" th:field="*{password}" required>
+      </div>
+   </div>
+   
+   
+     <div class="form-group row">
+         <label class="col-form-label col-4">Email</label>
+     <div class="col-8">
+          <input type="email" class="form-control" id="email" th:field="*{email}" required>
+      </div>
+   </div>
+   
+   <div class="form-group row">
+         <label class="col-form-label col-4">Mobile</label>
+     <div class="col-8">
+          <input type="text" class="form-control" id="mobile" th:field="*{mobile}" required>
+      </div>
+   </div>
+   
+   <div class="form-group row">
+         <label class="col-form-label col-4">Address</label>
+     <div class="col-8">
+          <input type="text" class="form-control" id="address" th:field="*{address}" required>
+      </div>
+    
+   </div>
+<div>
+ <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+
+<div>
+<a th:href="account">GO Back</a>
+</div>
+</form>
+</div> 
+</body>
+</html>

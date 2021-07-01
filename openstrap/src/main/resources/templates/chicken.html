@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1 style="color: orange;text-align: center;">Chicken selling business</h1>
+<div class="container right">
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">Paneer</a>  
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">Chicken birayani</a>  
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">Mutton birayani</a> 
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">Rice Dal</a> 
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">chicken 65</a> 
+<a style="font-family: sans-serif;font-style: italic;background-color: fuchsia ;width: 40px;height: 40px;font-size: 30px" href="panner">chicken Roast</a> 
+
+<img src="img/photos/c1.jpg" width="500" height="500">
+<img src="img/photos/c2.jpg" width="500" height="500">
+<img src="img/photos/c3.jpg" width="500" height="500">
+<img src="img/photos/c4.jpg" width="500" height="500">
+</div>
+<div class="container">
+<a class="btn btn-primary" href="Add Item">ADD</a>
+<form th:action="@{chickens}" method="post"
+style="max-width:600px;margin:0 auto;"
+th:object="${chicken}">
+<div class="m-3">
+    <div class="form-group row">
+      <label style="color: green;" class="col-form-label col-4"><i class="fa fa-user" aria-hidden="true"></i> Username</label>
+      <div class="col-8">
+         <input type="text" class="form-control" name="username" id="username"  required="required" >
+     </div>
+     </div>
+     
+      <div class="form-group row">
+      <label style="color: green;" class="col-form-label col-4"><i class="fas fa-address-card"></i> Address</label>
+      <div class="col-8">
+         <input type="text" class="form-control" name="address"  id="address" required="required">
+     </div>
+     </div>
+     
+     <div class="form-group row">
+            <label style="color: green" class="col-form-label col-4" for="birthdaytime"><i class="fas fa-calendar-day"></i> Birthday (date and time):</label>
+         <div class="col-8">       
+               <input type="datetime-local" class="form-control" id="birthdaytime" name="birthdaytime">
+          </div>
+     </div>
+     
+     
+     
+     <div class="form-group row">
+              <label style="color: green"  class="col-form-label col-4" for="quantity"><i class="fab fa-the-red-yeti"></i> Quantity (one to five):</label>
+         <div class="col-8">       
+                <input type="number"  class="form-control"  id="quantity" name="quantity" min="1" max="5">
+          </div>
+     </div>
+    
+     
+      <div class="form-group row">
+      <label style="color: green;" class="col-form-label col-4"><i class="fas fa-envelope-open-text"></i> email</label>
+      <div class="col-8">
+         <input type="email" class="form-control" name="email" id="email" required="required" >
+     </div>
+     </div>
+     
+     
+      <div class="form-group row">
+      <label style="color: green;" class="col-form-label col-4"><i class="fas fa-rupee-sign"></i>Rates</label>
+      <div class="col-8">
+         <select class="form-control" name="rate" id="rate" style="font-size: 20px;color: blue">
+           <option style="color: blue;font-size: 20px">100</option>
+           <option style="color: blue;font-size: 20px">150</option>
+           <option style="color: blue;font-size: 20px">200</option>
+           <option style="color: blue;font-size: 20px">250</option>
+           <option style="color: blue;font-size: 20px">300</option>
+           <option style="color: blue;font-size: 20px">350</option>
+           <option style="color: blue;font-size: 20px">400</option>
+           <option style="color: blue;font-size: 20px">450</option>
+           <option style="color: blue;font-size: 20px">500</option>
+         </select>
+     </div>
+     </div>
+     
+     <div class="form-group row">
+          <label style="color: green;" class="col-form-label col-4" for="myfile"><i class="far fa-file-pdf"></i> Select a file:</label>
+         <div class="col-8">       
+                 <input type="file"  id="myfile" name="myfile">
+          </div>
+    </div>
+    </div>
+    
+    <div class="container">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>
+
+<div class="container text-center">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal" >New</button>
+         <table class="table" style="text-align: center;">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>Address</th>
+                    <th>DateofBirth</th>
+                    <th>quantity</th>
+                    <th>email</th>
+                    <th>username</th>
+                    <th>rate</th>
+                    <th>myfile</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="chicken:${chickens}">
+                    <td th:text="${chicken.id}"></td>
+                    <td th:text="${chicken.address}"></td>
+                    <td th:text="${chicken.birthdaytime}"></td>
+                    <td th:text="${chicken.quantity}"></td>
+                    <td th:text="${chicken.email}"></td>
+                    <td th:text="${chicken.username}"></td>
+                    <td th:text="${chicken.rate}"></td>
+                    <td th:text="${chicken.myfile}"></td>
+                    <td>
+                    <div class="btn-group">
+                        <a th:href="@{/chickens/findById/(id=${chicken.id})}" class="btn btn-warning" id="editButton"><i class="far fa-edit"></i></a>
+                        <a th:href="@{/chickens/delete/(id=${chicken.id})}" class="btn btn-danger" id="deleteButton"><i class="fas fa-trash-alt"></i></a>
+                    </div>
+                    
+                    </td>
+                  </tr>
+                  </tbody>
+                  </table>
+ <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: maroon;" class="modal-title" id="exampleModalLabel">AddNew Person</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form th:action="@{/chickens/addNew}" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Username:</label>
+            <input type="text" class="form-control" id="username" name="username"  required="required">
+          </div>
+          
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Address:</label>
+            <input type="text" class="form-control" id="address" name="address"  required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">BirthDaytime:</label>
+            <input type="text" class="form-control" id="birthdaytime" name="birthdaytime"  required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Quantity:</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required="required">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">MyFile:</label>
+            <input type="file" class="form-control" id="myfile" name="myfile" required="required">
+          </div>
+          
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Rate:</label>
+            <input type="text" class="form-control" id="rate" name="rate" required="required">
+          </div>
+          
+          <div class="form-group">
+           <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+                  
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: maroon;" class="modal-title" id="exampleModalLabel">AddNew Person</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form th:action="@{/chickens/update}" method="put">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="id" name="id"  required="required">
+          </div>        
+        
+        
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Username:</label>
+            <input type="text" class="form-control" id="username" name="username"  required="required">
+          </div>
+          
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Address:</label>
+            <input type="text" class="form-control" id="address" name="address"  required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">BirthDaytime:</label>
+            <input type="text" class="form-control" id="birthdaytime" name="birthdaytime"  required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Quantity:</label>
+            <input type="text" class="form-control" id="quantity" name="quantity" required="required">
+          </div>
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required="required">
+          </div>
+          
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">MyFile:</label>
+            <input type="file" class="form-control" id="myfile" name="myfile" required="required">
+          </div>
+          
+           <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Rate:</label>
+            <input type="text" class="form-control" id="rate" name="rate" required="required">
+          </div>
+          
+          <div class="form-group">
+           <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+                  
+
+
+
+ <script src="js/scripts.js"></script>
+  <script src="js/chicken.js"></script> 
+ </div>        
+</div>
+</body>
+</html>

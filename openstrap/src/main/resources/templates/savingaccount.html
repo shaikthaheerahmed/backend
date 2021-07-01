@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container text-center">
+  <div>
+    <h1 style="color: maroon;">User Saving Accounts</h1>
+  </div>
+<form th:action="@{savingaccount}" method="post"
+style="max-width:600px;margin:0 auto;"
+th:object="${saving}">
+<div class="m-3">
+  <div class="form-group row">
+      <label style="color: green;" class="col-form-label col-4"><i class="fa fa-user" aria-hidden="true"></i> Username</label>
+      <div class="col-8">
+         <input type="text" class="form-control" th:field="*{Username}" required="required" >
+      </div>
+  </div>
+  
+  <div class="form-group row">
+      <label style="color:green;" class="col-form-label col-4"><i class="fa fa-key" aria-hidden="true"></i> password</label>
+      <div class="col-8">
+         <input type="password" class="form-control" th:field="*{password}" required="required" >
+      </div>
+  </div>
+  
+  <div class="form-group row">
+      <label style="color: green" class="col-form-label col-4"><i class="fa fa-mobile" aria-hidden="true"></i> phone</label>
+      <div class="col-8">
+         <input type="text" class="form-control" th:field="*{phone}" required="required" >
+      </div>
+  </div>
+  
+  
+ 
+  <div class="form-group row">
+      <label style="color:green;" class="col-form-label col-4"><i class="fa fa-map-marker" aria-hidden="true"></i> Address</label>
+      <div class="col-8">
+         <input type="text" class="form-control" th:field="*{address}" required >
+      </div>
+  </div>
+  
+  
+  <div class="form-group row">
+      <label style="color:green;" class="col-form-label col-4"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</label>
+      <div class="col-8">
+         <input type="email" class="form-control" th:field="*{email}" required >
+      </div>
+  </div>
+ 
+ 
+  <div class="form-group row">
+      <label style="color: green"class="col-form-label col-4"><i class="fa fa-book" aria-hidden="true"></i> accountNo</label>
+      <div class="col-8">
+         <input type="text" class="form-control" th:field="*{accountno}" required >
+      </div>
+  </div>
+  
+  <div>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+    <a th:href="account">Back To account</a>
+  </div>
+
+
+</div>
+
+
+
+
+
+</form>
+
+
+</div>
+</body>
+</html>

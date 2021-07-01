@@ -1,0 +1,151 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
+
+*{
+	margin: 0px;
+	padding:0px;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+body{
+	background:#f3f5f9; 
+	background-image:url("/img/app.jpg");
+	background-size: cover;
+	background-position: center;
+}
+.navigation{
+	position: fixed;
+	width: 60px;
+	height:100%;
+	background: gray;
+	transition:0.5s;
+}
+.navigation:hover,.navigation.active{
+	width:300px;
+	
+}
+.navigation ul{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+.navigation ul li{
+	position:relative;
+	width:100%;
+	list-style:none;
+}
+.navigation ul li:hover{
+	
+	background: #ea1d63;
+}
+.navigation ul li a{
+	position: relative;
+	display: block;
+	width:100%;
+	display: flex;
+	text-decoration: none;
+	color:#fff;
+}
+.navigation ul li a .icon{
+	position: relative;
+	display: block;
+	min-width: 60px;
+	height: 60px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.navigation ul li a .icon .fa{
+	font-size: 24px;
+}
+.navigation ul li a .title{
+	position: relative;
+	display: block;
+	padding: 0 10px;
+	height: 60px;
+	line-height: 60px;
+	text-align: start;
+	white-space: nowrap;
+	
+}
+.toggle{
+	position: absolute;
+	top:0;
+	right:0;
+	width:60px;
+	height:60px;
+	background:#ff00ff;
+	cursor: pointer;
+	}
+.toggle.active{
+	background:#ea1d63;
+}
+.toggle:before{
+	content: '\f0c9';
+	font-family: fontAwesome;
+	position:absolute;
+	height:100%;
+	width:100%;
+	line-height: 60px;
+	text-align: center;
+	font-size: 24px;
+	color:#fff;
+	
+}
+.toggle.active:before{
+	content:'\f00d';
+}
+.menu-bar{
+	background:orange;
+	text-align: center;
+	
+}
+.menu-bar ul{
+	display:inline-flex;
+	list-style: none;
+	color:#fff;
+}
+.menu-bar ul li{
+	width:120px;
+	margin:15px;
+	padding:15px;
+}
+.menu-bar ul li a{
+	text-decoration: none;
+	color:#fff;
+}
+.active,.menu-bar ul li:hover{
+	background:#2bab0d;
+	border-radius: 2px;
+}
+.menu-bar .fa{
+	margin-right: 8px;
+}
+.sub-menu-1{
+	display: none;
+}
+.menu-bar ul li:hover .sub-menu-1{
+	display:none;
+	position: absolute;
+	background:rgb(0,100,0);
+	margin-top: 15px;
+	margin-left:15px;
+}
+.menu-bar ul li:hover .sub-menu-1 ul{
+	display:block;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li{
+	width: 150px;
+	padding: 10px;
+	background: transparent;
+	border-bottom: 1px dotted #fff;
+	border-radius: 0px;
+	text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
+	border-bottom: none;
+}

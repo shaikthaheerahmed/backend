@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/home.css" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<!-- Header -->
+
+<div class="menu-bar">
+<img class="logo-img" src="/img/photos/logo1.jpg" align="left" height="100" width="170" title="leaf of the world">
+<ul>
+ <li class="active"><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+ <li ><a href="/about"><i class="fa fa-user" aria-hidden="true"></i>About us</a>
+  <div class="sub-menu-1">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Shopping</a></li>
+    <li><a href="#">Energy</a></li>
+  </ul>
+ </div>
+ </li>
+ <li><a href="#"><i class="fa fa-clone" aria-hidden="true"></i>Services</a></li>
+ <li><a href="#"><i class="fa fa-users" aria-hidden="true"></i>Clients</a></li>
+ <li><a href="#"><i class="fa fa-inr" aria-hidden="true"></i>Investors</a></li>
+ <li><a href="#"><i class="fa fa-edit" aria-hidden="true"></i>Training</a></li>
+</ul>
+</div>
+
+
+<!-- side bar -->
+<div class="navigation">
+<img src="/img/ahmed.jpg">
+  <ul>
+     <li>
+       <a href="#">
+         <span class="icon"><i class="fa fa-home" aria-hidden="true"></i></span>
+         <span class="title">Home</span>
+           <span class="menu-arrow arrow_carrot-right"></span>
+       </a>
+     </li>
+     
+    
+     
+     
+     <li>
+       <a href="/profile">
+         <span class="icon"><i class="fa fa-male" aria-hidden="true"></i></span>
+         <span class="title">Profile</span>
+       </a>
+     </li>
+     
+     <li>
+       <a href="/message">
+         <span class="icon"><i class="fa fa-comment" aria-hidden="true"></i></span>
+         <span class="title">Messages</span>
+       </a>
+     </li>
+     
+     
+      <li>
+       <a href="/account">
+         <span class="icon"><i class="fa fa-usd" aria-hidden="true"></i></span>
+         <span class="title">Accounts</span>
+       </a>
+     </li>
+     
+      <li>
+       <a href="/document">
+         <span class="icon"><i class="fa fa-book" aria-hidden="true"></i></span>
+         <span class="title">Documents</span>
+       </a>
+     </li>
+     
+      <li>
+       <a href="/people">
+         <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></span>
+         <span class="title">People</span>
+       </a>
+     </li>
+     
+      <li>
+       <a href="#">
+         <span class="icon"><i class="fa fa-female" aria-hidden="true"></i></span>
+         <span class="title">Manager</span>
+       </a>
+     </li>
+     
+      <li>
+       <a href="#">
+         <span class="icon"><i class="fa fa-tasks" aria-hidden="true"></i></span>
+         <span class="title">Settings</span>
+       </a>
+     </li>
+     
+      <li>
+       <a href="#">
+         <span class="icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+         <span class="title">HR Setting</span>
+       </a>
+     </li>
+  </ul>
+</div>
+   
+   
+   <div class="toggle" onclick="togglemenu()" ></div>
+   <script type="text/javascript">
+   function togglemenu(){
+	   let navigation=document.querySelector('.navigation');
+	   let toggle=document.querySelector('.toggle');
+	   navigation.classList.toggle('active');
+	   toggle.classList.toggle('active');
+   }
+   
+   </script>
+</body>
+</html>  

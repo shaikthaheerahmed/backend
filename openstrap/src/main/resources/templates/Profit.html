@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container text-center">
+<h1>
+   Profit accounts
+</h1>
+<form th:action="@{profit}" method="post" 
+style="max-width: 600px;margin: 0 auto;"
+th:object="${profit}">
+<div class="m-3">
+   <div class="form-group row">
+       <label class="col-form-label col-4">Username</label>
+       <div class="col-8">
+         <input type="text" class="form-control" th:field="*{username}" id="username" required>
+       </div>
+   </div>
+    <div class="form-group row">
+       <label class="col-form-label col-4">password</label>
+       <div class="col-8">
+         <input type="password" class="form-control" th:field="*{password}" id="password" required>
+       </div>
+   </div>
+    <div class="form-group row">
+       <label class="col-form-label col-4">Email</label>
+       <div class="col-8">
+         <input type="email" class="form-control" th:field="*{email}" id="email" required>
+       </div>
+   </div>
+    <div class="form-group row">
+       <label class="col-form-label col-4">Phone</label>
+       <div class="col-8">
+         <input type="text" class="form-control" th:field="*{phone}" id="phone" required>
+       </div>
+   </div>
+    <div class="form-group row">
+       <label class="col-form-label col-4">permanentAddress</label>
+       <div class="col-8">
+         <input type="text" class="form-control" th:field="*{permanentaddress}" id="permanentaddress" required>
+       </div>
+   </div>
+    <div class="form-group row">
+       <label class="col-form-label col-4">currentAddress</label>
+       <div class="col-8">
+         <input type="text" class="form-control" th:field="*{currentaddress}" id="currentaddress" required>
+       </div>
+   </div>
+<div class="container">
+  <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+   
+</div>
+</form>
+</div>
+</body>
+</html>
